@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.addExpense)
 
         button.setOnClickListener(){
-
+            val expenseName1 = println(expenseInput)
+            println(expenseName1)
+            setContentView(R.layout.expense)
         }
     }
 
