@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         val expenseInput = findViewById<EditText>(R.id.editText)
         val amount = findViewById<EditText>(R.id.amountInput)
         val button = findViewById<Button>(R.id.addExpense)
+//        val showButton = findViewById<Button>(R.id.showDetails)
+
 
         val expenseList: MutableList<expenses> = ArrayList()
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity() {
                 amount.text.clear()
             }
         }
+
+
 
 
 
