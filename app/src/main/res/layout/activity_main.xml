@@ -75,15 +75,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="261dp"
-        android:layout_height="244dp"
+        android:layout_width="337dp"
+        android:layout_height="218dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="57dp"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/addExpense"
-        app:layout_constraintVertical_bias="0.142"
-        android:scrollbars="vertical" />
+        app:layout_constraintVertical_bias="0.053" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

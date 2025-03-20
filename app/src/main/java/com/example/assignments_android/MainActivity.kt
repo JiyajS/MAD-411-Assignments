@@ -2,6 +2,7 @@ package com.example.assignments_android
 
 import ExpenseAdapter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
+        Log.d("ActivityLifecycle","onCreate called")
         val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
         val expenseInput = findViewById<EditText>(R.id.editText)
@@ -43,16 +44,34 @@ class MainActivity : AppCompatActivity() {
                 expenseInput.text.clear()
                 amount.text.clear()
             }
-
-
-
-
         }
+
 
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d("ActivityLifecycle","onStart called")
+    }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("ActivityLifecycle", "onResume called")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d("ActivityLifecycle", "onPause called")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.d("ActivityLifecycle", "onStop called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ActivityLifecycle", "onDestroy called")
+    }
     }
 
 
