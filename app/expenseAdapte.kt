@@ -7,10 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ExpenseAdapter(private val expenses: List<expenses>) :
     RecyclerView.Adapter<ExpenseAdapter.MyViewHolder>() {
-
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.expense, parent, false)
@@ -24,6 +20,13 @@ class ExpenseAdapter(private val expenses: List<expenses>) :
 
         holder.deleteButton.setOnClickListener {
             removeExpense(position)
+        }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ExpenseDetailsActivity::class.java).apply {
+                putExtra("expense_name", expense.name)
+                putExtra("expense_amount", expense.amount)
+            }
+            holder.itemView.context.startActivity(intent)
         }
     }
 

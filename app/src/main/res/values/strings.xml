@@ -13,4 +13,7 @@
     <string name="delete">Delete</string>
     <string name="amount1">Amount</string>
     <string name="expense_name1">Expense Name</string>
+    <string name="financial_tips">Financial Tips</string>
+    <string name="name1">name</string>
+    <string name="amount2">Amount</string>
 </resources>

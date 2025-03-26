@@ -1,6 +1,7 @@
 package com.example.assignments_android
 
 import ExpenseAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -22,31 +23,48 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         Log.d("ActivityLifecycle","onCreate called")
-        val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
+        val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val expenseInput = findViewById<EditText>(R.id.editText)
         val amount = findViewById<EditText>(R.id.amountInput)
         val button = findViewById<Button>(R.id.addExpense)
-//        val showButton = findViewById<Button>(R.id.showDetails)
+
 
 
         val expenseList: MutableList<expenses> = ArrayList()
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         val adapter = ExpenseAdapter(expenseList)
         recyclerView.adapter = adapter
+
+
         button.setOnClickListener(){
             val expenseName = expenseInput.text.toString().trim()
             val expenseAmount = amount.text.toString().trim()
+            val newExpense = expenses(expenseName, expenseAmount)
 
             if (expenseName.isNotEmpty() && expenseAmount.isNotEmpty()) {
-                val newExpense = expenses(expenseName, expenseAmount)
                 expenseList.add(newExpense)
                 adapter.notifyItemInserted(expenseList.size -1)
                 expenseInput.text.clear()
                 amount.text.clear()
+
+
             }
+
+//            val intent = Intent(this, ExpenseDetailsActivity::class.java)
+//            startActivity(intent)
+
+//            val intent = Intent(this, ExpenseDetailsActivity::class.java)
+//
+//            intent.putExtra("Expense Name",newExpense.name)
+//            intent.putExtra("Expense Amount", newExpense.amount)
+//            startActivity(intent)
+
+
         }
+
+
+
 
 
 
