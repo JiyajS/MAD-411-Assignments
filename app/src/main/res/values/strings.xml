@@ -16,4 +16,8 @@
     <string name="financial_tips">Financial Tips</string>
     <string name="name1">name</string>
     <string name="amount2">Amount</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="expense_tracker">Expense Tracker</string>
+    <string name="total_expense">Total Expense</string>
 </resources>

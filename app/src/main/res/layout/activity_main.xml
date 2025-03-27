@@ -17,11 +17,11 @@
         android:layout_width="146dp"
         android:layout_height="35dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="56dp"
         android:text="@string/expense_name"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck" />
 
 
@@ -30,14 +30,14 @@
         android:layout_width="262dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="56dp"
         android:hint="@string/expense"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textViewName"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Amount"
@@ -95,22 +95,36 @@
         android:layout_width="376dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="10dp"
         android:text="@string/financial_tips"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="260dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="56dp"
-        android:text="Expense Tracker"
-        android:textSize="34sp"
+    <FrameLayout
+        android:id="@+id/header_fragment"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/footerFragment"
+        android:layout_width="391dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/tipsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView">
+
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
