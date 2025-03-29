@@ -32,8 +32,11 @@ class MainActivity : AppCompatActivity() {
         Log.d("ActivityLifecycle", "onCreate called")
 
         val headerFragment = HeaderFragment()
+        val footerFragment = FooterFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.header_fragment,headerFragment)
+            .replace(R.id.footerFragment,footerFragment)
+
             .commit()
 
         val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.recyclerView)
@@ -63,9 +66,18 @@ class MainActivity : AppCompatActivity() {
                 expenseInput.text.clear()
                 amount.text.clear()
             }
+//            totalExpense(footerFragment, expenseList)
         }
 
+
     }
+//    private fun totalExpense(footerFragment: FooterFragment, expenseList: List<expenses>) {
+//        val total = expenseList.sumOf {
+//            // Convert each amount to Double safely, treating invalid ones as 0.0
+//            it.amount?.toDoubleOrNull() ?: 0.0
+//        }
+//        footerFragment.totalExpense(total)
+//    }
         override fun onStart() {
             super.onStart()
             Log.d("ActivityLifecycle", "onStart called")
