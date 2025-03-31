@@ -42,7 +42,6 @@ class ExpenseAdapter(private val expenses: MutableList<expenses>) :
             intent.putExtra("Expense Name", expense.name)
             intent.putExtra("Expense Amount", expense.amount)
             context.startActivity(intent)
-
         }
     }
 
